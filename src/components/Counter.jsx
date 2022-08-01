@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "./Counter.css";
-function Counter() {
+function Counter(props) {
   const [count, setCount] = useState(0);
+  const {updateSum} = props
   const increase = () => {
     setCount(count + 1);
+    updateSum(1)
   };
 
   const decrease = () => {
     setCount(count - 1);
+    updateSum(-1)
   };
   return (
     <div >
